@@ -22,3 +22,29 @@ header {
     font-family: Arial;
     padding: 10px; 
 }
+a {
+    color: maroon;
+    text-decoration: none;
+}
+
+a:link{
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: maroon;
+    background-color: transparent;
+    text-decoration: none;}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+    box-shadow: 10px 10px 5px rgb(117, 117, 215);
+}
+
+a:active{
+    color: black;
+    opacity: 0.3;
+}
