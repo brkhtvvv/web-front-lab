@@ -8,13 +8,17 @@ main {
     background-color: oldlace; 
     color: saddlebrown; 
     font-family: Arial; 
-    margin: 0px;
+    margin: 10px 20px 45px;
 }
 footer {
     background-color: rosybrown; 
     color: cornsilk; 
     font-family: Arial;
     padding: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
 }
 header {
     background-color: rosybrown; 
