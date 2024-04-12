@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бархатова Ольга Викторовна. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-16x16.png">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-32x32.png">
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+        }
+        .position-relative {
+            position: relative;
+            right: -150px;
+            top: -130px;
+            z-index: 0;
+        }
+        .position-static {
+            position: relative;
+            z-index: 1;
+        }
+        .position-static:hover+div {
+            position: relative;
+            z-index: 2;
+            display: block;
+        }
+        .position-absolute {
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover{
+            position: absolute;
+            size: 400px;
+            color: blue;
+            transform: scale(1.5);
+            box-shadow: 10px 10px 5px rgb(117, 117, 215);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+
+    <main>
+        <div class="position-static">static</div>
+        <div class="position-static">static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+
+    <footer>
+        &copy; Бархатова Ольга, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
