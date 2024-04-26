@@ -15,6 +15,11 @@
             document.getElementById("Image").style.filter = "blur(" + value + ")";
             
         }
+        function brightnessChange() {
+            let value = document.getElementById("brightnessValue").value + "%";
+            document.getElementById("brightnessOutput").innerText = value;
+            document.getElementById("Image").style.filter += " brightness(" + value + ")";
+        }
     </script>
 </head>
 
@@ -28,6 +33,11 @@
             Фильтр blur:
             <input type="range" min="0" max="20"  value="0" onchange="blurChange()" id="blurValue">
             <span id="blurOutput"></span>
+        </div>
+        <div>
+            Фильтр brightness:
+                <input type="range" min="0" max="500"  value="100" onchange="brightnessChange()" id="brightnessValue">
+                <span id="brightnessOutput"></span>
         </div>
 
         <div><img src="img.jpg" id="Image" width="55%" height="55%"></div>
