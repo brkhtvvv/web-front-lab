@@ -8,16 +8,34 @@
     <link rel="shortcut icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon.ico" type="image/x-icon">
     <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-16x16.png">
     <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-32x32.png">
+    <script>
+        function showSum(){
+            let a = 1;
+            let b = 2;
+            let result = a + b;
+            alert ('Сумма ' + a + ' и ' + b + ' равна ' + result);}
+    </script>
+
+    <style>
+        .message {
+            height: 50px;
+            width: 300px;
+            background-color: rgb(222, 202, 241);
+            display: inline-block;
+            border: 2px solid rgb(141, 64, 141);
+            text-align: center;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <header onclick="showAuthor()">
+    <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
 
     <main>
-        <ul>
-            <li><a href="arithmetic.html">Арифметика</a></li>
-        </ul>
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
     </main>
 
     <footer>
