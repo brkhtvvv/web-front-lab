@@ -46,8 +46,14 @@
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a / b;
-            alert ('Деление ' + a + ' и ' + b + ' равна ' + result);}
-
+            alert ('Деление ' + a + ' и ' + b + ' равно ' + result);}
+        function changeOutput(buttonNum, backColor, textColor, border) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.border = border;
+        }
     </script>
 
     <style>
@@ -66,6 +72,11 @@
         .footer {
             cursor: pointer;
         }
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +92,15 @@
         <div class="message" onclick="showRaz()">Найти разность чисел</div>
         <div class="message" onclick="showProiz()">Найти произведение чисел</div>
         <div class="message" onclick="showDel()">Найти деление чисел</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'LightCyan', 'DarkBlue', '2px solid')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'MediumOrchid', 'LightYellow', '3px solid')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3,'LightGreen', 'DarkGreen', '1px solid')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'LemonChiffon', 'Tomato', '4px solid')">
+        </div>
+
+        <div id="output"></div>
     </main>
 
     <footer class="footer" ondblclick="showPrivet()">
