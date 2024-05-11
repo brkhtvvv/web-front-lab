@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бархатова Ольга Викторовна. Лабораторная 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-16x16.png">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-32x32.png">
+</head>
+<style>
+    div {
+        width: 400px;
+        height: 100px;
+        line-height: 20px;
+        font-size: 20px;
+        text-align: center;
+        background-color: lightblue;
+        border: 1px solid black;
+        margin: 15px;
+        padding-top: 60px;
+        position: static;
+        cursor: pointer;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    }
+</style>
+<script>
+    function ChangeColor(div) {
+        if(div.style.background == 'lightblue') {
+            div.style.background = 'red'
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'красный'
+        }
+        else if(div.style.background == 'red') {
+            div.style.background = 'gold'
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'золотой'
+        }
+        else if(div.style.background == 'gold') {
+            div.style.background = 'coral'
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'коралловый'
+        }
+        else if(div.style.background == 'coral') {
+            div.style.background = 'black'
+            div.style.color = 'white'
+            document.getElementById('color-name').innerHTML = 'черный'
+        }
+        else {
+            div.style.background = 'lightblue'
+            div.style.color = 'black'
+            document.getElementById('color-name').innerHTML = 'светло-голубой'
+        }
+    }
+</script>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 6
+    </header>
+
+    <main>
+        <div class="color" ondblclick="ChangeColor(this)">
+            Цвет: <span id="color-name">светло-голубой</span><br>
+            Сделайте двойной щелчок, чтобы сменить.
+        </div>
+    </main>
+
+    <footer>
+        &copy; Бархатова Ольга, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
