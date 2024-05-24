@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бархатова Ольга Викторовна. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon.ico" type="image/x-icon">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-16x16.png">
+    <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-32x32.png">
+    <style>
+        h2{
+            font-family: monospace;
+            font-size: 18px;
+            color: black;
+        }
+        p{
+            font-family: monospace;
+            font-size: 18px;
+            color: grey;
+        }
+        .exchange-rate-info{
+            margin: 50px 750px;
+            width: 1000px;
+        }
+        button{
+            margin: 0px 680px;
+            background-color: white;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = 'https://www.cbr-xml-daily.ru/daily_json.js';
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const currentRate = data.Valute.EUR.Value;
+                    const previousRate = data.Valute.EUR.Previous;
+                    const difference = currentRate - previousRate;
+                    const message = difference > 0 ? 'Курс евро поднялся' : 'Курс евро опустился';
+                    const rateInfo = `
+                        <div class="exchange-rate-info">
+                            <h2>Курс евро</h2>
+                            <p>Дата запроса: ${data.Date}</p>
+                            <p>Текущий курс: ${currentRate}</p>
+                            <p>Прошлый курс: ${previousRate}</p>
+                            <p>Разница: ${difference.toFixed(2)} (${message})</p>
+                        </div>
+                    `;
+                    document.getElementById('exchange-rate').innerHTML = rateInfo;
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+        }
+    </script>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <a href="https://www.cbr-xml-daily.ru/">API для курсов ЦБ РФ</a>
+        <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+        <div id="exchange-rate"></div>
+    </main>
+    <footer>
+        &copy; Бархатова Ольга, ФБИ-24, 2 курс, 2024
+    </footer>
+</body>
+</html>
