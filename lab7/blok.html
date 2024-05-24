@@ -8,6 +8,19 @@
     <link rel="shortcut icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon.ico" type="image/x-icon">
     <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-16x16.png">
     <link rel="icon" href="C:\Users\brkhtvvv\Desktop\laba1\web-front-lab\favicon-32x32.png">
+    <script>
+                function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.backgroundColor = 'pink';
+            newBlock.style.height = '70px';
+            newBlock.style.border = 'solid';
+            newBlock.style.borderColor = 'black';
+            newBlock.style.margin = '5px';
+            newBlock.style.borderRadius = '8px';
+            newBlock.style.width = '100px'; 
+            document.querySelector('main').appendChild(newBlock);
+        }
+    </script>
 </head>
 <body>
     <header onclick="showAuthor()">
@@ -15,11 +28,7 @@
     </header>
 
     <main>
-        <ol>
-            <li>
-                <a href="block.html" target="_blank">Добавление блоков</a>
-            </li>
-        </ol>
+        <button onclick="addNewBlock()">Добавить блок</button>
     </main>
 
     <footer>
