@@ -39,6 +39,20 @@
                 main.appendChild(newBlock);
             }
         }
+        function add20_50(){
+            let main = document.querySelector('main');
+            for(let i = 20; i<=50; i+=2.5){
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.border = '1px solid'
+                newBlock.style.margin = '5px';
+                newBlock.style.width = '115px'; 
+                newBlock.innerHTML = `${i}`;
+                newBlock.style.borderColor = 'red';
+                newBlock.style.backgroundColor = 'antiquewhite';
+                main.appendChild(newBlock);
+            }
+        }
     </script>
         <style>
             button {
@@ -63,6 +77,7 @@
         <button onclick="addNewBlock()">Добавить блок</button>
         Введите чиcло: <input type="number" id="numberOfBlocks">
         <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="add20_50()">>20 => 50</button>
     </main>
 
     <footer>
